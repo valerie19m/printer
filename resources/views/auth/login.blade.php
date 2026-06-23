@@ -223,7 +223,7 @@
                      <label>{{ __('messages.username') }}</label>
                     <x-text-input id="username"
                         type="text"
-                        name="username"
+                        name="name"
                         :value="old('username')"
                         required autofocus
                         autocomplete="username" />
