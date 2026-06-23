@@ -23,7 +23,14 @@ WORKDIR /var/www
 COPY . .
 
 # Install dependencies
+# Install dependencies
 RUN composer install --no-dev --optimize-autoloader
+
+RUN php artisan config:clear || true
+RUN php artisan cache:clear || true
+
+# Permissions
+RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
 
 # Permissions
 RUN chown -R www-data:www-data /var/www/storage /var/www/bootstrap/cache
