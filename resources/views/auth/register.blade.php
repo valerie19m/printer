@@ -197,11 +197,11 @@
                      <label>{{ __('messages.username') }}</label>
                     <x-text-input id="username"
                         type="text"
-                        name="username"
+                        name="name"
                         :value="old('username')"
                         required autofocus
-                        autocomplete="username" />
-                    <x-input-error :messages="$errors->get('username')" class="error-text" />
+                        autocomplete="name" />
+                    <x-input-error :messages="$errors->get('name')" class="error-text" />
                 </div>
 
                 <!-- Email -->
