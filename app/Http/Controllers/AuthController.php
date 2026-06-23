@@ -18,10 +18,10 @@ class AuthController extends Controller
 
     public function register(Request $req) {
         $user = User::create([
-            'username' => $req->username,
-            'email' => $req->email,
-            'password' => Hash::make($req->password),
-        ]);
+    'name' => $req->username,
+    'email' => $req->email,
+    'password' => Hash::make($req->password),
+]);
 
         Auth::login($user);
         return redirect('/');
