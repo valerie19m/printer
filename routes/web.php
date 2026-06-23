@@ -74,3 +74,7 @@ Route::post('/favorites/toggle/{id}', [ArticleController::class, 'addToFavorites
 
 Route::delete('/favorites/{id}', [ArticleController::class, 'remove'])
     ->name('favorites.remove');
+Route::get('/migrate-now', function () {
+    Artisan::call('migrate', ['--force' => true]);
+    return 'migrated';
+});
