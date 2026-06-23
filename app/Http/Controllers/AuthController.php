@@ -31,7 +31,7 @@ class AuthController extends Controller
         if (Auth::attempt([
     'email' => $req->email,
     'password' => $req->password
-]);) {
+])) {
             return redirect('/');
         }
 
